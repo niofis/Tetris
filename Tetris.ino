@@ -33,13 +33,6 @@
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-int melody[] = {
-  NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
-};
-int noteDurations[] = {
-  4, 8, 8, 4, 4, 4, 4, 4
-};
-
 static const unsigned char  PIECES[TOTAL_PIECES][TOTAL_ROTATIONS][PIECE_SIDE][PIECE_SIDE] PROGMEM =
 {
   {
@@ -612,6 +605,12 @@ void drawLogo() {
 }
 
 void playMusic() {
+  int melody[] = {
+    NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
+  };
+  int noteDurations[] = {
+    4, 8, 8, 4, 4, 4, 4, 4
+  };
   // iterate over the notes of the melody:
   for (int thisNote = 0; thisNote < 8; thisNote++) {
 
